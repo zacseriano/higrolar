@@ -1,0 +1,23 @@
+Topic: ufpi-iot26/eq04/no02/telemetriaQoS: 1
+{"id":"eq04-no02","seq":112,"ts":1792709222,"sensor_ok":true,"temp_c":29.3,"umid_pct":38}
+2026-10-22 19:47:03:670
+
+Topic: ufpi-iot26/eq04/no02/telemetriaQoS: 1
+{"id":"eq04-no02","seq":113,"ts":1792709226,"sensor_ok":true,"temp_c":29.3,"umid_pct":38}
+2026-10-22 19:47:08:669
+
+Topic: ufpi-iot26/eq04/no02/configQoS: 1
+
+{
+  "periodo_s": 30
+}
+2026-10-22 19:47:12:282
+
+Topic: ufpi-iot26/eq04/no02/configQoS: 1
+{
+  "periodo_s": 30
+}
+2026-10-22 19:47:12:285
+
+Topic: ufpi-iot26/eq04/no02/telemetriaQoS: 1
+{"id":"eq04-no02","seq":114,"ts":1792709256,"sensor_ok":true,"temp_c":29.3,"umid_pct":38}
