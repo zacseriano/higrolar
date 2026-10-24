@@ -20,7 +20,7 @@
 \RNF{01}&Unicidade lógica&Chave \texttt{id/boot\_id/seq}&Analisador e \CT{05}\\
 \RNF{02}&Conservação local sem internet&Fila em RAM de 120 registros&Inspeção do firmware e \CT{03}\\
 \RNF{03}&Entrega confiável ao gravador&QoS 1, sessão persistente e \emph{flush} por mensagem&\CT{06}\\
-\RNF{04}&Qualidade quantitativa&Registrar Contabilizar saltos internos e separar completude por agenda&\texttt{qualidade.py} e \CT{08}\\
+\RNF{04}&Qualidade quantitativa&Contabilizar saltos internos e calcular a completude sobre as leituras esperadas pela agenda&\texttt{qualidade.py} e \CT{08}\\
 \RNF{05}&Segurança da comunicação&MQTT/TLS 8883, credenciais segregadas&Inspeção; ressalva no ESP32\\
 \RNF{06}&Autonomia e energia&Orçamento explícito e origem dos valores&Apêndice~\ref{ap:energia}; medição elétrica pendente\\
 \bottomrule\end{tabular}\fonte{Equipe eq04.}\end{table}

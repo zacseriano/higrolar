@@ -26,9 +26,9 @@ Início&Fim&Condição ambiental observada&Registro\\\midrule
 24/10 14h10&24/10 15h02&Ar ligado, umidificador desligado&Diário\\
 24/10 15h02&24/10 15h19&Ar e umidificador ligados simultaneamente&Diário\\
 24/10 15h19&24/10 15h35&Ar desligado; janela aberta; umidificador ligado&Diário\\
-24/10 15h35&24/10 15h56&Umidificador desligado, janela aberta anteriormente&Diário\\\bottomrule\end{tabular}\fonte{\texttt{5 - Log Eventos Relatório(2).txt}; horas locais UTC-3.}\end{table}
+24/10 15h35&24/10 15h56&Umidificador desligado, janela aberta anteriormente&Diário\\\bottomrule\end{tabular}\fonte{\texttt{docs/evidencias/5 - Log Eventos Relatório.txt}; horas locais UTC-3.}\end{table}
 \section*{Saída integral do analisador sobre o arquivo definitivo}
 A listagem é a saída integral do analisador executado sobre o CSV final de 3.096 mensagens. As mesmas contagens fundamentam as Tabelas~\ref{tab:qualidade} e~\ref{tab:campanha}.
 \lstinputlisting[style=terminal,basicstyle=\ttfamily\tiny,breaklines=true,caption={Relatório final de qualidade, emitido pelo analisador da equipe},label={lst:qualidade-final}]{evidencias/qualidade_final.txt}
 \section*{Arquivos brutos e evidências complementares}
-Os arquivos estão organizados nas pastas \texttt{docs/evidencias/}, \texttt{dados/} e \texttt{gravador/}. As figuras do corpo do relatório são geradas por \texttt{dados/gerar\_graficos.py}. A saída CSV original não foi sobrescrita por dados deduplicados ou interpolados.
+Os arquivos estão organizados nas pastas \texttt{docs/evidencias/}, \texttt{dados/} e \texttt{gravador/}. As figuras do corpo do relatório foram geradas a partir das telemetrias únicas de \texttt{dados/mensagens.csv}, as mesmas que \texttt{dados/limpar.py} grava em \texttt{dados/telemetria\_limpa.csv}. O CSV bruto não foi sobrescrito por dados deduplicados ou interpolados.
