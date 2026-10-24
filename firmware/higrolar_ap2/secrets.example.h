@@ -1,0 +1,9 @@
+#pragma once
+#define WIFI_SSID "SUA_REDE_2G4"
+#define WIFI_SENHA "SENHA_WIFI"
+#define WIFI_CANAL 0
+#define MQTT_HOST "HOST_EXATO_EMQX"
+#define MQTT_PORTA 8883
+#define MQTT_USUARIO "USUARIO_MQTT_ESP32"
+#define MQTT_SENHA "SENHA_MQTT_ESP32"
+// Opcional: #define MQTT_CA_PEM "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"

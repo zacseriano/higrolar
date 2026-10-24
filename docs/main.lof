@@ -1,0 +1,19 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Arquitetura lógica efetivamente implementada no ciclo 2.}}{12}{figure.3.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Arranjo experimental de bancada com notebook, ESP32 em protoboard e periféricos usados na campanha.}}{14}{figure.4.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Climatizador/umidificador portátil empregado nos ensaios de aumento de umidade e nos testes em operação simultânea.}}{15}{figure.4.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Ar-condicionado do ambiente, utilizado nos ensaios de refrigeração isolada e em conjunto com o umidificador.}}{16}{figure.4.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Caminho físico e lógico da aquisição ao arquivo CSV, utilizando EMQX Cloud.}}{19}{figure.5.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Contas MQTT separadas na autenticação do EMQX Cloud, sem exposição de senhas.}}{21}{figure.5.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Modo de autorização \emph {blacklist} exibido no EMQX; solicitações sem regra explícita permanecem permitidas.}}{21}{figure.5.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Regras explícitas de \emph {publish/subscribe} cadastradas para o ESP32.}}{22}{figure.5.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Regras explícitas do monitor MQTTX: leitura da árvore e escrita em configuração.}}{22}{figure.5.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces MQTTX evidencia \texttt {offline}, \texttt {online} e retomada da telemetria.}}{28}{figure.6.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Console do gravador na recuperação de mensagens acumuladas.}}{28}{figure.6.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Novo \texttt {boot\_id}, sequência reiniciada e primeira leitura antes do sincronismo NTP.}}{29}{figure.6.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Inicialização do assinante com TLS, Client ID fixo, inscrição QoS 1 e recebimento de mensagens.}}{30}{figure.6.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Série final de temperatura com intervenções indicadas por linhas verticais.}}{31}{figure.7.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Série final de umidade relativa, sem interpolação de lacunas.}}{32}{figure.7.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Umidade relativa na janela próxima ao acionamento de 23/10 às 15h33.}}{32}{figure.7.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Temperatura e umidade medidas na tarde de 24/10. Faixas sombreadas assinalam funcionamento simultâneo; linhas pontilhadas marcam intervenções registradas.}}{34}{figure.7.17}%

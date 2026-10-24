@@ -1,0 +1,16 @@
+23.10
+14h29 - Interrupção de Wi-fi ESP-32
+14h35 - Reinício do ESP-32 botão EN
+14h38 - Fechei e abri cmd de gravacao.py
+15h33 - Ligado Umidificador
+18h43 - Desligado Umidificador
+
+24.10
+01h05 - Ligado Ar (24°)
+04h05 - Desligado Ar
+12h03 - Ligado Umidificador
+12h59 - Ligado Ar (24°)
+14h10 - Desligado Umidificador
+15h02 - Ligado Umidificador
+15h19 - Desligado Ar (Janela Aberta)
+15h35 - Desligado Umidificador

@@ -1,0 +1,13 @@
+\chapter{Procedimentos de testes reproduzíveis}\label{ap:testes}
+\begin{table}[H]\centering\caption{Guia de reprodução dos principais testes de resiliência}\label{tab:passo-testes}\scriptsize
+\begin{tabular}{@{}L{2.1cm}L{5.2cm}L{6.5cm}@{}}\toprule
+\textbf{Teste}&\textbf{Preparação e ação}&\textbf{Evidência / aceitação}\\\midrule
+CT-01/02&Com rede ativa, assinar \texttt{ufpi-iot26/eq04/no02/\#} no MQTTX; enviar \texttt{\{"periodo\_s":30\}} ao tópico config&Observar dois timestamps de telemetria separados por cerca de 30~s, QoS~1\\
+CT-03&Deixar nó em funcionamento, gravador no notebook e suspender apenas Wi-Fi do nó&Capturar \texttt{offline}, \texttt{online} e sequências recuperadas\\
+CT-04&Interromper alimentação do nó durante a sessão MQTT&Confirmar LWT \texttt{offline}; não confundir com publicação voluntária\\
+CT-05&Pressionar EN, aguardar nova telemetria&Verificar \texttt{boot\_id} incrementado; \texttt{seq} reiniciado\\
+CT-06&Parar gravador, manter broker/nó, abrir novamente com mesmo client ID&Verificar mensagens pendentes e CSV sem truncamento\\
+CT-07&Reiniciar nó e acompanhar os primeiros pacotes antes de NTP&Observar \texttt{ts:null} ou registrar quando o relógio sincroniza cedo demais para observação\\
+CT-08&Executar \texttt{qualidade.py} contra cópia congelada do CSV&Comparar chaves compostas, duplicatas, lacunas internas e horários\\
+\bottomrule\end{tabular}\fonte{Procedimentos da equipe adaptados do Laboratório 03.}\end{table}
+Todos os testes que interrompem energia ou rede são feitos deliberadamente, com equipamento alimentado por fonte USB adequada, sem conectar/desconectar fios do circuito energizado. Manter registro de data e hora do evento no Apêndice~\ref{ap:campanha}.

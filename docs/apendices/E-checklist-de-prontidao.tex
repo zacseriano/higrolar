@@ -1,0 +1,20 @@
+\chapter{Checklist de prontidão para a campanha}\label{ap:checklist}
+\begin{table}[H]\centering\caption{Prontidão para comunicação e aquisição, avaliada após a coleta}\label{tab:checklist}\scriptsize
+\begin{tabular}{@{}C{.55cm}L{4.65cm}L{4.4cm}L{1.5cm}L{2.7cm}@{}}\toprule
+\#&Critério&Evidência observável&Condição&Observação\\\midrule
+1&Leitura sem laço de espera longo&Firmware e OLED&Sim&Tarefa 2~s\\
+2&Keepalive MQTT configurado&\texttt{setKeepAlive(30)}&Sim&LWT\\
+3&Status retido e testamento&12 mensagens de estado&Sim&Retido e transitório\\
+4&Reconexão após perda de Wi-Fi&14h29--14h32&Sim&Backlog\\
+5&Contrato e timestamp&JSON com \texttt{boot\_id}, \texttt{seq}, \texttt{ts}&Sim&Um \texttt{ts:null}\\
+6&Reboot identificável&Boots 120, 121, 122&Sim&NVS\\
+7&Fila local e descarte&120 entradas no código&Sim&Volátil\\
+8&Gravador com sessão durável&Log \texttt{session\_present}&Sim&Reconexão\\
+9&Gravação antes do ACK&\texttt{fsync+manual\_ack}&Sim&CSV\\
+10&Análise da qualidade&\texttt{qualidade.py} final&Sim&3.096 mensagens\\
+11&Segredos não versionados&\texttt{.gitignore} e example&Revisar&Conferir Git\\
+12&Validação de TLS ponta a ponta&Python verifica; ESP32 não&Parcial&Configurar CA\\
+13&Autorização por menor privilégio&Regras explícitas, modo blacklist&Parcial&Usar whitelist\\
+14&Medição real do custo do rádio&Sem instrumento&Não&Limitação\\\bottomrule\end{tabular}\fonte{Código, EMQX, evidências e campanha do Higrolar.}\end{table}
+\section*{Síntese de prontidão}
+A cadeia funcional de telemetria, persistência e qualidade foi concluída e testada com dados reais. A prontidão de segurança ainda depende da validação de certificado no nó e da configuração do EMQX para negar o acesso que não corresponda a uma regra explícita. O consumo do rádio tampouco foi medido. Essas limitações são parte do resultado da AP2, não itens marcados como concluídos sem evidência.

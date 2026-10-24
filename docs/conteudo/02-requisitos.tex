@@ -1,0 +1,41 @@
+\chapter{Requisitos e critérios de aceitação}
+\label{cap:requisitos}
+\rubricaRobustez
+\section{Requisitos funcionais}
+\begin{table}[H]\centering\caption{Requisitos funcionais verificáveis na AP2}\label{tab:rf}\scriptsize
+\begin{tabular}{@{}L{1.2cm}L{6.1cm}L{7.1cm}@{}}\toprule
+\textbf{ID}&\textbf{Comportamento requerido}&\textbf{Critério verificável}\\\midrule
+\RF{01}&Ler DHT11 e atualizar exibição local&Leituras a cada 2~s; alterações apresentadas no OLED; teste funcional.\\
+\RF{02}&Publicar telemetria por Wi-Fi/MQTT&JSON real recebido no EMQX e MQTTX em QoS~1, em intervalo configurável; \CT{01}.\\
+\RF{03}&Expor estado e configuração remota&\texttt{online} retido, LWT \texttt{offline} e comando \texttt{periodo\_s} aplicado; \CT{02}, \CT{04}.\\
+\RF{04}&Reconectar após falta de conectividade&Retorno autônomo de \texttt{online} e telemetria após teste de cerca de 2~min sem Wi-Fi; \CT{03}.\\
+\RF{05}&Distinguir inicializações do nó&\texttt{boot\_id} diferente após EN e sequência reiniciada sem falsa duplicação; \CT{05}.\\
+\RF{06}&Persistir e auditar telemetria&CSV acrescido após recepção; executar \texttt{qualidade.py} e reportar lacunas e duplicações; \CT{06}.\\
+\RF{07}&Preservar horário de aquisição&Campo \texttt{ts} numérico após sincronismo e \texttt{null} antes de NTP; \CT{07}.\\
+\bottomrule\end{tabular}\fonte{Equipe eq04; critérios baseados na implementação efetiva.}\end{table}
+\section{Requisitos não funcionais}
+\begin{table}[H]\centering\caption{Requisitos não funcionais e sua verificação}\label{tab:rnf}\scriptsize
+\begin{tabular}{@{}L{1.2cm}L{5.1cm}L{4cm}L{4.1cm}@{}}\toprule
+\textbf{ID}&\textbf{Requisito}&\textbf{Alvo}&\textbf{Verificação}\\\midrule
+\RNF{01}&Unicidade lógica&Chave \texttt{id/boot\_id/seq}&Analisador e \CT{05}\\
+\RNF{02}&Conservação local sem internet&Fila em RAM de 120 registros&Inspeção do firmware e \CT{03}\\
+\RNF{03}&Entrega confiável ao gravador&QoS 1, sessão persistente e \emph{flush} por mensagem&\CT{06}\\
+\RNF{04}&Qualidade quantitativa&Registrar Contabilizar saltos internos e separar completude por agenda&\texttt{qualidade.py} e \CT{08}\\
+\RNF{05}&Segurança da comunicação&MQTT/TLS 8883, credenciais segregadas&Inspeção; ressalva no ESP32\\
+\RNF{06}&Autonomia e energia&Orçamento explícito e origem dos valores&Apêndice~\ref{ap:energia}; medição elétrica pendente\\
+\bottomrule\end{tabular}\fonte{Equipe eq04.}\end{table}
+\section{Restrições e hipóteses}
+O DHT11 reporta temperatura/umidade em resolução limitada e não cobre umidades inferiores a aproximadamente 20\% UR, restringindo a detecção do extremo seco. A conectividade depende da rede local e de internet; fila em RAM não resiste a desligamento; a memória NVS preserva apenas o contador de inicializações. A contagem de mensagens esperadas para a \emph{campanha} exige descontar etapas com período de 5~s, intervenções e horas em que a aquisição não ocorreu.
+\section{Rastreabilidade}\label{sec:rastreabilidade}
+\begin{table}[H]\centering\caption{Rastreabilidade da AP2}\label{tab:rastreabilidade}\footnotesize
+\begin{tabular}{@{}L{2cm}L{5.1cm}L{3cm}L{4cm}@{}}\toprule
+\textbf{Requisitos}&\textbf{Implementação / evidência}&\textbf{Caso}&\textbf{Situação final}\\\midrule
+RF-01, RF-02 & Capítulos~\ref{cap:implementacao} e \ref{cap:conectividade}&CT-01&\aprovado\\
+RF-03 & Seção~\ref{sec:topicos}; log de comando&CT-02/04&\aprovado\\
+RF-04, RNF-02 & Fila local e logs de Wi-Fi&CT-03&\aprovado\\
+RF-05, RNF-01 & NVS e log do \texttt{boot\_id}&CT-05&\aprovado\\
+RF-06, RNF-03, RNF-04 & Gravador, CSV, analisador&CT-06/08&\aprovado\, com limite de escopo\\
+RF-07 & \texttt{ts:null} no CSV&CT-07&\aprovado\\
+RNF-05 & TLS no Python; firmware inseguro se sem CA&CT-09&\parcial\\
+RNF-06 & Estimativa de energia da AP1, sem medidor&CT-10&\parcial\\
+\bottomrule\end{tabular}\fonte{Equipe eq04.}\end{table}

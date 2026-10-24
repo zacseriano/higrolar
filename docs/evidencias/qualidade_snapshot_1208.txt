@@ -1,0 +1,47 @@
+Comando: python qualidade.py dados/mensagens_snapshot_2026-10-24_1208.csv
+
+[qualidade] arquivo: /mnt/data/AP2_eq04_projeto/dados/mensagens_snapshot_2026-10-24_1208.csv
+[qualidade] mensagens na janela: 2640
+
+=== eq04-no02 ===
+  leituras recebidas            2626
+  leituras unicas               2624
+  boots observados              3: [120, 121, 122]
+  reinicios observados          2
+  faltas internas               0
+  duplicatas (id,boot_id,seq)   2
+  fora de ordem                 0
+  completude estimada           100.0%
+  timestamp ausente             1
+  flag DUP MQTT                 0
+  falhas de sensor              0
+  chegada - ts                  mediana 2.058s; p95 2.546s; max 217.544s
+  janela                        2026-10-23T14:27:27-03:00 -> 2026-10-24T12:08:54-03:00
+  detalhamento por inicializacao:
+    boot_id=120: recebidas=2, unicas=2, seq=19..20, faltas=0, duplicadas=0
+    boot_id=121: recebidas=24, unicas=24, seq=1..24, faltas=0, duplicadas=0
+    boot_id=122: recebidas=2600, unicas=2598, seq=1..2598, faltas=0, duplicadas=2
+  transicoes de status:
+    2026-10-23T14:27:27-03:00  offline
+    2026-10-23T14:27:27-03:00  online
+    2026-10-23T14:29:16-03:00  offline
+    2026-10-23T14:32:28-03:00  online
+    2026-10-23T14:34:06-03:00  offline
+    2026-10-23T14:34:06-03:00  online
+    2026-10-23T14:42:22-03:00  offline
+    2026-10-23T14:42:24-03:00  online
+    2026-10-24T11:47:25-03:00  offline
+    2026-10-24T11:47:26-03:00  online
+  comandos config: 2
+    2026-10-23T14:27:27-03:00  {
+  "periodo_s": 30
+}
+    2026-10-23T14:34:55-03:00  {
+  "periodo_s": 30
+}
+
+[nota] Lacunas so sao inferidas entre o menor e maior seq de cada boot observado.
+[nota] Boots sem telemetria nao podem ser contabilizados apenas pelo CSV.
+[nota] Atraso chegada-ts depende de relogios sincronizados e backlog.
+[nota] Flag DUP MQTT nao equivale necessariamente a duplicata logica.
+[qualidade] resumo JSON salvo em /mnt/data/AP2_eq04_projeto/dados/qualidade_snapshot.json

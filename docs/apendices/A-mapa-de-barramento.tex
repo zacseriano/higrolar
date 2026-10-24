@@ -1,0 +1,10 @@
+\chapter{Mapa de barramento e interligações}\label{ap:barramento}
+\begin{table}[H]\centering\caption{Mapa físico do Higrolar em campanha}\label{tab:barramento}\footnotesize
+\begin{tabular}{@{}L{3cm}L{2.8cm}L{2.6cm}L{5.5cm}@{}}\toprule
+\textbf{Componente}&\textbf{Pinos no ESP32}&\textbf{Interface}&\textbf{Observação}\\\midrule
+DHT11&GPIO4, 3V3, GND&Digital proprietária&Leitura a cada 2 s; dados ambientais\\
+OLED SSD1306&SDA=GPIO21, SCL=GPIO22&I\textsuperscript{2}C, endereço 0x3C&Display 128$\times$64; atualiza após mudança visual\\
+ESP32 DevKit&USB&Alimentação / série&Programa grava via USB, rádio Wi-Fi embarcado\\
+Roteador&Wi-Fi 2,4~GHz&802.11&Sem ligação física com nó\\
+\bottomrule\end{tabular}\fonte{Esquema funcional utilizado pela equipe.}\end{table}
+A alimentação dos módulos é de 3,3~V, com referência de terra comum, e não por sinais 5~V nos GPIOs. O OLED responde a \texttt{0x3C}; a interface de programação e depuração é o Monitor Serial a 115.200~Bd. A AP2 não acrescentou relé, motor nem sensor secundário ao circuito da AP1.

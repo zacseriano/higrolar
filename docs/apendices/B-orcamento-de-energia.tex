@@ -1,0 +1,22 @@
+\chapter{Orçamento de energia}\label{ap:energia}
+\section{Base histórica da AP1 e limite da AP2}
+A AP1 apresentou orçamento elétrico calculado por valores estimados de componentes: ESP32 sem rádio na faixa de 40 a 70~mA (valor central 55), OLED entre 10 e 25~mA (valor central 17,5), DHT11 até 1~mA. Seu cenário de operação com display permanentemente ativo resultou em corrente média estimada de 75,4~mA e consumo de 1.809~mA\,h/dia a 5~V. Esse resultado \textbf{não contempla adequadamente a variação de consumo do Wi-Fi e a negociação TLS da AP2}.
+\begin{table}[H]\centering\caption{Valores de partida da AP1, todos estimados}\label{tab:energia}\footnotesize
+\begin{tabular}{@{}L{5cm}R{2.8cm}L{5.7cm}@{}}\toprule
+\textbf{Componente}&\textbf{Valor usado}&\textbf{Procedência}\\\midrule
+ESP32 ativo, sem Wi-Fi&55~mA&Faixa de especificação adotada pela AP1\\
+OLED ativo&17,5~mA&Estimativa da AP1\\
+DHT11&1~mA&Estimativa conservadora da AP1\\
+Conjunto (estados da AP1)&75,4~mA&Modelo de estados da AP1; sem medidor USB\\
+\bottomrule\end{tabular}\fonte{Relatório entregue na AP1 da equipe Estiagem.}\end{table}
+\section{Capacidade energética e análise de sensibilidade}
+Para uma bateria nominal de 10.000~mA\,h especificada em células de 3,7~V e eficiência de 85\%, a energia útil estimada na USB é \(10\,\mathrm{Ah}\times3{,}7\,\mathrm{V}\times0{,}85=31{,}45\,\mathrm{Wh}\). A autonomia aproximada para uma corrente média \(I\) na USB de 5~V é \(t=31{,}45/(5I)\), com \(I\) em ampères. Os resultados são \emph{cenários} e não medições da campanha.
+\begin{table}[H]\centering\caption{Autonomia potencial com a corrente média real (não medida)}\label{tab:sensibilidade}\footnotesize
+\begin{tabular}{@{}R{2.5cm}R{2.5cm}R{2.8cm}L{5.9cm}@{}}\toprule
+\textbf{Corrente}&\textbf{Potência}&\textbf{Autonomia}&\textbf{Interpretação}\\\midrule
+50 mA&0,25 W&125,8 h&Hipótese otimista\\
+75 mA&0,375 W&83,9 h&Referência da AP1, sem rádio quantificado\\
+100 mA&0,50 W&62,9 h&Consumo maior, autonomia inferior\\
+150 mA&0,75 W&41,9 h&Hipótese pessimista\\\bottomrule\end{tabular}\fonte{Cálculo sobre 31,45~Wh úteis; hipótese de eficiência.}\end{table}
+\section{Ponto ainda não verificado}
+Não foi recebido log com \texttt{millis()} medindo separadamente associação Wi-Fi/DHCP, sessão TLS e publish, nem leitura real de corrente com medidor USB em série. Logo, a rubrica de medição do rádio permanece \textbf{pendente}. Uma medição futura deverá amostrar corrente de repouso, Wi-Fi associado e transmissão, medir tempo de cada estado e estimar o consumo diário ponderado pelo período de 30~s. Não extrapolar a autonomia da AP1 como resultado medido da AP2.

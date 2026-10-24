@@ -1,0 +1,4 @@
+14h29 - Interrupção de Wi-fi ESP-32
+14h35 - Reinício do ESP-32 botão EN
+14h38 - Fechei e abri cmd de qualidade.py
+15h33 - Ligado Umidificador

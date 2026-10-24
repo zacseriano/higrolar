@@ -1,0 +1,24 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {table}{\numberline {1}{\ignorespaces Requisitos funcionais verificáveis na AP2}}{10}{table.2.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Requisitos não funcionais e sua verificação}}{10}{table.2.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Rastreabilidade da AP2}}{11}{table.2.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Matriz de decisão para a instalação observada}}{18}{table.5.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Responsabilidades e domínios de falha}}{19}{table.5.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Campos e unidade do contrato publicado}}{20}{table.5.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Contrato de tópicos sob \texttt {ufpi-iot26/eq04/no02/}}}{20}{table.5.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Contas do EMQX, papéis e permissões configuradas}}{21}{table.5.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Procedência do orçamento de energia}}{23}{table.5.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Ficha final da campanha}}{24}{table.5.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Indicadores de qualidade do CSV definitivo}}{25}{table.5.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Casos de teste do ciclo 2 e resultados observados}}{27}{table.6.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces Comparação de 30 min antes e depois do primeiro acionamento}}{33}{table.7.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Fases observadas em 24/10 e seus indicadores descritivos}}{34}{table.7.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces Mapa físico do Higrolar em campanha}}{39}{table.A.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces Valores de partida da AP1, todos estimados}}{40}{table.B.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces Autonomia potencial com a corrente média real (não medida)}}{40}{table.B.17}%
+\contentsline {table}{\numberline {18}{\ignorespaces Guia de reprodução dos principais testes de resiliência}}{42}{table.C.18}%
+\contentsline {table}{\numberline {19}{\ignorespaces Transparência de utilização de IA na AP2}}{43}{table.D.19}%
+\contentsline {table}{\numberline {20}{\ignorespaces Prontidão para comunicação e aquisição, avaliada após a coleta}}{44}{table.E.20}%
+\contentsline {table}{\numberline {21}{\ignorespaces Eventos operacionais e mensagens de estado, UTC-3}}{45}{table.F.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Eventos manuais da campanha, com começo e fim quando anotados}}{45}{table.F.22}%

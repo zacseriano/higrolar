@@ -1,0 +1,34 @@
+\chapter{Registro da campanha de coleta}\label{ap:campanha}
+\section*{Diário de testes operacionais}
+O diário a seguir combina intervenções registradas manualmente e instantes de mensagens encontrados no CSV. Uma ocorrência \texttt{offline/online} sem anotação de intervenção é preservada como causa desconhecida, sem interpretação especulativa.
+\begin{table}[H]\centering\caption{Eventos operacionais e mensagens de estado, UTC-3}\label{tab:diario}\scriptsize
+\begin{tabular}{@{}L{3.15cm}L{6.55cm}L{4.5cm}@{}}\toprule
+Data e hora&Evento documentado&Procedência\\\midrule
+23/10 14h27&Gravador conectado com sessão MQTT existente&PowerShell e CSV\\
+23/10 14h29&Interrupção proposital do Wi-Fi do ESP32&Diário original\\
+23/10 14h29min16s&\texttt{offline} observado no broker&CSV de status\\
+23/10 14h32min28s&\texttt{online}, telemetrias com backlog&CSV e gravador\\
+23/10 14h35&Reinício por botão EN&Diário; novo boot 122\\
+23/10 14h38&Encerramento e reinício do processo \texttt{gravador.py}&Diário e logs Python\\
+23/10 14h42min22s&\texttt{offline} transitório&CSV, causa não aferida\\
+23/10 14h42min24s&\texttt{online}, repetição lógica identificada&CSV, chave composta\\
+24/10 11h47min25s&\texttt{offline} não provocado/documentado&CSV de status\\
+24/10 11h47min26s&\texttt{online} recuperado&CSV de status\\
+24/10 15h56min54s&Última mensagem do arquivo final&CSV consolidado\\\bottomrule\end{tabular}\fonte{\texttt{dados/mensagens.csv}, logs e diário de eventos.}\end{table}
+\section*{Diário ambiental para rotulagem posterior}
+\begin{table}[H]\centering\caption{Eventos manuais da campanha, com começo e fim quando anotados}\label{tab:eventos}\scriptsize
+\begin{tabular}{@{}L{3.2cm}L{3.1cm}L{5.8cm}L{2.4cm}@{}}\toprule
+Início&Fim&Condição ambiental observada&Registro\\\midrule
+23/10 15h33&23/10 18h43&Umidificador ligado, ar não registrado&Diário\\
+24/10 01h05&24/10 04h05&Ar-condicionado ligado; ajuste 24~\si{\celsius}&Diário\\
+24/10 12h03&24/10 12h59&Umidificador ligado, antes de ligar o ar&Diário\\
+24/10 12h59&24/10 14h10&Umidificador e ar ligados simultaneamente&Diário\\
+24/10 14h10&24/10 15h02&Ar ligado, umidificador desligado&Diário\\
+24/10 15h02&24/10 15h19&Ar e umidificador ligados simultaneamente&Diário\\
+24/10 15h19&24/10 15h35&Ar desligado; janela aberta; umidificador ligado&Diário\\
+24/10 15h35&24/10 15h56&Umidificador desligado, janela aberta anteriormente&Diário\\\bottomrule\end{tabular}\fonte{\texttt{5 - Log Eventos Relatório(2).txt}; horas locais UTC-3.}\end{table}
+\section*{Saída integral do analisador sobre o arquivo definitivo}
+A listagem é a saída integral do analisador executado sobre o CSV final de 3.096 mensagens. As mesmas contagens fundamentam as Tabelas~\ref{tab:qualidade} e~\ref{tab:campanha}.
+\lstinputlisting[style=terminal,basicstyle=\ttfamily\tiny,breaklines=true,caption={Relatório final de qualidade, emitido pelo analisador da equipe},label={lst:qualidade-final}]{evidencias/qualidade_final.txt}
+\section*{Arquivos brutos e evidências complementares}
+Os arquivos estão organizados nas pastas \texttt{docs/evidencias/}, \texttt{dados/} e \texttt{gravador/}. As figuras do corpo do relatório são geradas por \texttt{dados/gerar\_graficos.py}. A saída CSV original não foi sobrescrita por dados deduplicados ou interpolados.

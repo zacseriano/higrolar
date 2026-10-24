@@ -1,0 +1,13 @@
+\chapter{Problema e contexto de uso}
+\label{cap:problema}
+\rubricaJustificativa
+\section{Motivação e continuidade da AP1}
+A equipe Estiagem desenvolve o Higrolar para acompanhar as condições térmicas de um ambiente residencial em Teresina (PI), onde episódios de ar seco motivam a observação da umidade relativa. O dispositivo combina ESP32, módulo DHT11 e display OLED (EQUIPE ESTIAGEM, 2026); o primeiro ciclo descreveu a motivação, os requisitos embarcados e a indicação de uso de umidificador. A AP2 toma o mesmo conjunto físico e acrescenta conectividade, registros persistentes e dados utilizáveis em análise longitudinal. A operação do umidificador e do ar-condicionado foi realizada por uma pessoa, não por atuadores elétricos comandados pelo ESP32.
+
+\section{Ambiente operacional e fronteiras}
+O nó foi empregado em ambiente residencial com acesso a uma rede Wi-Fi de 2,4~GHz e internet. O primeiro ponto de conectividade é o roteador ou ponto de acesso local; o serviço de mensagens encontra-se no EMQX Cloud, fora da residência. A distância física entre ESP32 e roteador não foi aferida com trena e, por isso, não será declarada como valor medido; o atendimento ao requisito de alcance é demonstrado funcionalmente pela associação Wi-Fi e continuidade da campanha. O computador com Windows 11 executa o assinante Python e grava as mensagens em disco.
+
+\section{Questão do segundo ciclo}
+A pergunta investigada na AP2 é: \emph{como tornar auditáveis, recuperáveis e úteis as observações de temperatura e umidade feitas por um nó doméstico, inclusive quando ocorrem interrupções de rede ou reinicializações?} O sucesso exige o caminho completo do sensor ao CSV, critérios verificáveis de qualidade, registro de intervenções ambientais e documentação das decisões de rádio e protocolo.
+\section{Escopo do experimento}
+A campanha registra mudanças naturais do ambiente e intervenções anunciadas, como ligar o umidificador, ligar o ar-condicionado e operar ambos conjuntamente. As observações não constituem ensaio clínico nem calibração metrológica; o objetivo é caracterizar tendências e eventos rotulados no mesmo ambiente, com limitações de causalidade explicitadas.
