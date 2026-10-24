@@ -1534,9 +1534,9 @@ a-bela acima. []
 
 [48
 
-] [49]) (apendices/F-registro-da-campanha [50
+]) (apendices/F-registro-da-campanha [49
 
-] [51
+] [50
 
 ]
 
@@ -1548,7 +1548,7 @@ Overfull \hbox (42.23949pt too wide) in paragraph at lines 34--105
 e-le-me-trias úni-cas de \T1/lmtt/m/n/12 dados/mensagens.csv\T1/lmr/m/n/12 ,
  []
 
-[52]
+[51]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -1559,4 +1559,4 @@ e-le-me-trias úni-cas de \T1/lmtt/m/n/12 dados/mensagens.csv\T1/lmr/m/n/12 ,
 \openout8 = `main.toc'.
 
  (main.aux) )
-Output written on main.xdv (53 pages, 281932 bytes).
+Output written on main.xdv (52 pages, 280580 bytes).
